@@ -1,0 +1,11 @@
+<ul class="menu menu--footer">
+  {% for item in items %}
+    <li{{ item.attributes }}>
+        {% include '@atoms/links/links.twig' with {
+          text: item.title,
+          class: item.class,
+          url: item.url
+        } %}
+    </li>
+  {% endfor %}
+</ul>

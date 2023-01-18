@@ -1,0 +1,21 @@
+<header class="banner-image" style="background-image: url({{background_img}})">
+   <div class="row">
+      <div class="banner-image__content">
+         {% include '@atoms/text/headings.twig' with {
+            heading_level: 1,
+            heading: title,
+         } %}
+         <div class="field field-name-field-sub-title field-type-text field-label-hidden">
+         {% include '@atoms/text/paragraph.twig' with {
+            paragraph_content: title1
+         } %}
+         </div>          
+         <div class="banner__link">
+         {% include '@atoms/links/links.twig' with {
+            text: text,
+            url: url
+         } %}
+         </div>
+      </div>
+   </div>
+</header>

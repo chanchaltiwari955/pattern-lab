@@ -1,0 +1,28 @@
+<div class="hero-content">
+   <div class="hero-content__container">
+         {% include '@atoms/text/headings.twig' with {
+            heading_level: 1,
+            heading: title,
+         } %}
+      <div class="hero-content__search">
+         <div class="content">
+            <form class="search-form" action="/" method="post" id="" >
+               <div>
+                  <div class="form-wrapper">
+                     <span class="domu-search__icon"></span>
+                     <div class="form-item form-type-textfield form-item-search">
+                        <input class="search-google-places-autocomplete clearable form-text pac-target-input" placeholder="Search by neighborhood, address, zip code..." type="text"  >
+                     </div>
+                  </div>
+                
+                  {% include '@atoms/buttons/buttons.twig' with {
+                      button_content: button_content,
+                      class: classbt,
+                      url: url
+                    } %}
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

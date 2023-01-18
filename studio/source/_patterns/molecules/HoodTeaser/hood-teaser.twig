@@ -1,0 +1,22 @@
+<div class="hood-teaser">
+   <div class="hood-teaser__text">
+      <div class="hood-teaser__title">
+         {% include '@atoms/links/links.twig' with {
+            text: text,
+            url: url
+         } %}
+      </div>
+      <div class="hood-teaser__description">
+          {% include '@atoms/text/paragraph.twig' with {
+            paragraph_content: description
+         } %}
+      </div>
+   </div>
+   <div class="hood-teaser__image">
+      <a href="#">
+         {% include '@atoms/images/image.twig' with {
+            src: hood_teaser_img
+         } %}
+      </a>
+   </div>
+</div>

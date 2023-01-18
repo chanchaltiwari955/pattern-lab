@@ -1,0 +1,192 @@
+@import "./variables";
+@import "./breakpoints";
+
+//background image gradient
+@mixin background-image($deg, $colorname, $opacity) {
+  background: linear-gradient($deg, $colorname, $opacity);
+}
+
+// select box appearance
+@mixin x-appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+//animation
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+//keyframe
+@mixin keyframes($keyframes...) {
+  -webkit-keyframes: $keyframes;
+  -moz-keyframes: $keyframes;
+  -ms-keyframes: $keyframes;
+  -o-keyframes: $keyframes;
+  keyframes: $keyframes;
+}
+
+//transition
+@mixin transition($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+//transition-delay
+@mixin transitiondelay($transitiondelay...) {
+  -webkit-transition-delay: $transitiondelay;
+  -moz-transition-delay: $transitiondelay;
+  -ms-transition-delay: $transitiondelay;
+  -o-transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+}
+
+//transform
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transition: $transforms;
+}
+
+// Rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//gradient color
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+/* mixing  end */
+
+/* placehoder start */
+%container {
+  margin: 0 auto;
+  max-width: $content-maxwidth;
+  padding: 0 1.25rem;
+}
+
+.tiny-heading,
+%tiny-heading {
+  font-size: rem(14px);
+  font-weight: $normal;
+  line-height: get-line-height(16px, 14px);
+}
+
+.xtiny-heading,
+%xtiny-heading {
+  font-size: rem(12px);
+  font-weight: $normal;
+  line-height: 1;
+}
+
+%body-1,
+.body-1 {
+  @media #{$small-up} {
+    font-size: rem(24px);
+  }
+  font-size: rem(18px);
+  letter-spacing: rem(-0.25px);
+  line-height: 1.3333;
+}
+// For the neighborhood listings page
+.h1-alt1,
+%h1-alt1 {
+  @media #{$small-up} {
+    font-size: rem(60px);
+  }
+  color: $color-white;
+  font-size: rem(40px);
+  font-weight: $normal;
+  letter-spacing: rem(-1px);
+  line-height: 1;
+  margin: 0;
+}
+/* placehoder end */
+
+//-------------------
+// Convert to REM
+//-------------------
+
+// additional info on Sass Functions Available for use.
+@function get-line-height($line-height, $font-size) {
+   @return $line-height / $font-size;
+}
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+//-------------------
+// Convert to REM
+//-------------------
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+//-------------------
+// REM Calc
+//-------------------
+
+// New Syntax, allows to optionally calculate on a different base value to
+// counter compounding effect of rem's. Call with 1, 2, 3 or 4 parameters, 'px'
+// is not required but supported:
+//
+//   rem(10 20 30px 40);
+//
+// Space delimited, if you want to delimit using comma's, wrap it in another
+// pair of brackets
+//
+//   rem((10, 20, 30, 40px));
+//
+// Optionally call with a different base (eg: 8px) to calculate rem.
+//
+//   rem(16px 32px 48px, 8px);
+//
+// If you require to comma separate your list
+//
+//   rem((16px, 32px, 48), 8px);
+
+@function rem($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}

@@ -1,0 +1,39 @@
+/** @file _admin.scss
+  * Administrative Styles
+  *
+**/
+
+.action-links {
+  margin: 0;
+}
+
+// Admin menu icon
+#admin-menu .dropdown .admin-menu-icon img {
+  width: rem(16px);
+}
+
+// Building report
+#domu-admin-active-building-report-dates p {
+  clear:both;
+  margin:1em 0;
+}
+
+#domu-admin-active-building-report-dates .container-inline-date {
+  display:inline-block;
+}
+
+#domu-admin-active-building-report-dates .container-inline-date label[for="edit-start-time"],
+#domu-admin-active-building-report-dates .container-inline-date label[for="edit-end-time"] {
+  font-weight:bold;
+}
+
+#domu-admin-active-building-report-dates .form-actions {
+  clear:both;
+}
+
+.page-admin-config-domu-active-buildings-report table tr td:nth-child(9),
+.page-admin-config-domu-active-buildings-report table tr td:nth-child(10),
+.page-admin-config-domu-active-buildings-report table tr td:nth-child(11) {
+  display:none;
+}
+// End building report

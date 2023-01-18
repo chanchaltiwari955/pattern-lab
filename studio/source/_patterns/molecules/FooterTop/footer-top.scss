@@ -1,0 +1,46 @@
+@import '../../_patterns-global/scss/abstracts/variables';
+@import '../../_patterns-global/scss/abstracts/mixins';
+
+.footer__menu {
+  @media #{$small-up} {
+    box-sizing: border-box;   
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 0;
+    padding: 0 1.25rem;
+  }
+  margin-bottom: rem(24px);
+
+  .block-title {
+    color: #4A4A4A;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  .menu {
+      padding: 0 0 1.5rem;
+      border-bottom: 1px solid #ddd;
+      @media #{$small-up} { 
+        border-bottom: none;
+        padding: 0 20% 0 0;
+      }
+    li {
+      display: block;
+      margin: 0;
+      padding: 0;
+      a { 
+        color: $color-xlight-grey;
+        font-size: 0.9375rem;
+        letter-spacing: 0;
+        line-height: 1.333;
+        padding: 0.3125rem 0;
+        text-decoration: none;
+
+        &:hover, &:focus {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+}

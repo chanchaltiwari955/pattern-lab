@@ -1,0 +1,68 @@
+/**
+  * Font Family GT-Walsheim
+**/
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular-Oblique.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular-Oblique.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Regular-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium-Oblique.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium-Oblique.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Medium-Oblique.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'GT-Walsheim';
+  src:
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold-Oblique.woff2') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold-Oblique.woff') format('woff'),
+    url('../../fonts/gt-walsheim/GT-Walsheim-Bold-Oblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}

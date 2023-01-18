@@ -1,0 +1,30 @@
+<nav>
+  <ul class="nav-menu">
+    {% for key,value in headermenutop.headerleft %}
+    <li {{ value.attributes }}>
+      {% include '@atoms/links/links.twig' with {
+        text: value.text,
+        class: value.class,
+        url: value.url
+      } %}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <ul class="nav-menu">
+    {% for key,value in headermenutopright.headerright %}
+      <li {{ value.attributes }}>
+        {% include '@atoms/links/links.twig' with {
+          text: value.text,
+          class: value.class,
+          url: value.url
+        } %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<a href="#off-canvas" class="navbar-toggle c-button" id="off-canvas-trigger" role="button" aria-controls="off-canvas" aria-pressed="false" aria-expanded="false"><span class="c-button__text">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="navbar-toggle__bars"></span>
+</span></a>

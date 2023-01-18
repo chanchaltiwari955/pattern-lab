@@ -1,0 +1,126 @@
+@import '../../_patterns-global/scss/abstracts/variables';
+
+.button,
+%button {
+  appearance: none;
+  background-color: $color-medium-grey;
+  border-radius: rem(3px);
+  border: 1px solid $color-medium-grey;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $GT-Walsheim;
+  font-size: rem(15px);
+  font-weight: $semibold;
+  line-height: 1;
+  margin: 0;
+  min-width: rem(150px);
+  padding: rem(16px 18px);
+  text-transform: none;
+  transition: background-color 200ms ease-out 0s, color 200ms ease-out 0s;
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: $color-white;
+    color: $color-medium-grey;
+    // Fix for iOS state.
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  // Add exceptions when there is a background color applied.
+  div[class*="c-bgd-color-"] & {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &.active {
+      text-decoration: none;
+    }
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
+
+// accent
+.button--accent,
+%button--accent {
+  background: $color-accent;
+  border-color: $color-accent;
+  color: $color-white;
+
+  &:hover,
+  &:focus,
+  &.active {
+    background: $color-white;
+    color: $color-accent;
+  }
+}
+
+.button--accent-clear,
+%button--accent-clear {
+  background: transparent;
+  border-color: $color-accent;
+  color: $color-accent;
+
+  &:hover,
+  &:focus,
+  &.active {
+    background: $color-accent;
+    color: $color-white;
+  }
+}
+
+.button--rounded,
+%button--rounded {
+  border-radius: rem(100px);
+  padding: rem(16px 20px);
+}
+
+.button--favorite,
+%button--favorite {
+  border: 1px solid $color-green;
+  color: $color-green;
+  font-weight: $normal;
+  min-width: 0;
+  padding: rem(8px 18px);
+
+  &:hover,
+  &:focus {
+    background: $color-green;
+    color: $color-white;
+  }
+}
+
+.button--small,
+%button--small {
+  font-size: rem(12px);
+  font-weight: $normal;
+  padding: rem($button-small-padding);
+}
+
+.button--large,
+%button--large {
+  @media #{$small-up} {
+    padding: rem(26px 30px);
+  }
+  font-size: rem(18px);
+  font-weight: $semibold;
+  padding: rem(16px 30px);
+}
+
+.button--inverse,
+%button--inverse {
+  background: $color-white;
+  border: 2px solid $color-accent;
+  color: $color-accent;
+
+  &:hover,
+  &:focus {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: $color-white;
+  }
+}

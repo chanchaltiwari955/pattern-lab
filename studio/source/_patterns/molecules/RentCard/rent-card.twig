@@ -1,0 +1,17 @@
+<table>
+  <tbody>
+      <tr class="odd">
+        <td>
+            <span>{% include '@atoms/links/links.twig' with {
+            text: apartmenttitle,
+            url: url  
+            } %}</span><br> 
+           {% include '@atoms/text/paragraph.twig' with {
+            paragraph_content: subhead } %}
+        </td>
+        <td>{% include '@atoms/text/paragraph.twig' with {
+               paragraph_content: rent
+            } %}</td>
+      </tr>
+  </tbody>
+</table>

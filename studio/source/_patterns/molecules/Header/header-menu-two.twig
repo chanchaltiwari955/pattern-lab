@@ -1,0 +1,20 @@
+<nav>
+  <ul class="nav-menu secondry">
+    {% for item in items %}
+      {% if item.title == "My Favorites" %}
+        <li{{ item.attributes.addClass('my-favorites') }}>
+      
+      {% elseif item.title == "+ List an Apartment" %}
+        <li{{ item.attributes.addClass('list-an-Apartment') }}>
+      {% else %}
+        <li{{ item.attributes }}>
+      {% endif %}
+          {% include '@atoms/links/links.twig' with {
+            text: item.title,
+            class: item.class,
+            url: item.url
+          } %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

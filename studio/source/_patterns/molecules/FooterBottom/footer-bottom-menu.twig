@@ -1,0 +1,32 @@
+<div class="footer__logo">
+  <a href="/">
+   {% include '@atoms/images/image.twig' with {
+      src: footer_logo
+    } %}
+  </a>
+</div>
+
+<div class="footer__bottom">
+      <nav>
+        <ul class="menu menu--footer">
+          {% for key,value in footermenubottom.footerBottom %}
+            {% for item in items %}
+            <li{{ item.attributes }}>
+                {% include '@atoms/links/links.twig' with {
+                  text: item.title,
+                  class: item.class,
+                  url: item.url
+                } %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+  <ul class="social-menu">
+    <li><a href="#" class="domu-icon-facebook" target="_blank"><span class="sr-only">Facebook</span></a></li>
+    <li><a href="#" class="domu-icon-twitter" target="_blank"><span class="sr-only">Twitter</span></a></li>
+    <li><a href="#" class="domu-icon-instagram" target="_blank"><span class="sr-only">Instagram</span></a></li>
+    <li><a href="#" class="domu-icon-pinterest" target="_blank"><span class="sr-only">Pinterest</span></a></li>
+  </ul>
+</div>
+
+<p class="footer__copy">{{footer_copy}}</p>

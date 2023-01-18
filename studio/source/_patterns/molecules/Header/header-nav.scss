@@ -1,0 +1,185 @@
+@import '../../_patterns-global/scss/abstracts/variables';
+@import '../../_patterns-global/scss/abstracts/mixins';
+
+.header__logo-nav > div{
+  @media #{$small-up} {
+    padding: rem(26px 0);  
+  }
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: rem(11px 0);
+  width: 100%;
+
+  > nav,
+  > .search-block-form {
+    @media #{$medium-down} {
+      display: none;
+    }
+  }
+
+  > nav {
+    @media #{$medium-up} {
+      display: flex;  
+    }
+    display: none;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-left: rem(30px);
+
+    &.secondry-menu {
+      justify-content: flex-end;
+    }
+  }
+
+.nav-menu {
+  margin: 0;
+  padding: 0;
+
+  #header & {
+    align-items: center;
+    display: flex; 
+
+    ul {
+      &:before {
+        border-bottom: rem(10px) solid $color-white;
+        border-left: rem(10px) solid transparent;
+        border-right: rem(10px) solid transparent;
+        content: '';
+        display: block;
+        height: 0; 
+        left: 50%;
+        position: absolute;
+        top: rem(-10px);
+        transform: translateX(-50%);
+        width: 0;
+        z-index: 10;
+      }
+
+      &:after {
+        border-bottom: rem(11px) solid rgba(0,0,0,0.30);
+        border-left: rem(11px) solid transparent;
+        border-right: rem(11px) solid transparent;
+        content: '';
+        display: block;
+        height: 0; 
+        left: 50%;
+        position: absolute;
+        top: rem(-11px);
+        transform: translateX(-50%);
+        width: 0;
+        z-index: 1;
+      }
+
+      a:not(.button) {
+        padding: rem(12px 0);
+      }
+
+      li + li {
+        border-top: 1px solid #eeeeee;
+      }
+    }
+
+    // The dropdown user navigation.
+    .nav-menu__user-nav {
+      background: $color-white;
+      border-radius: 1px;
+      box-shadow: 0 0 2px 0 rgba(0,0,0,0.50); // Needs to be at least 2px otherwise doesn't show up on Safari
+      display: none;
+      padding: rem(24px 37px);
+      top: calc(100% + #{rem(20px)}); 
+      position: absolute;
+      transform: translateX(#{rem(-126px)});
+      width: rem(380px);
+
+      &[data-visually-hidden="true"] {
+        display: none;
+      }
+
+      &[data-visually-hidden="false"] {
+        display: block;
+      }
+    }
+
+    // The *second* nav menu
+
+    > li {
+      &.my-favorites {
+        a {
+          position: relative;
+          &::before {
+            font-size: 0.75rem;
+            content: $domu-icon-heart; 
+            font-family: $font-icons;
+            font-weight: $bold;
+          }
+        }
+      }
+      &.list-an-Apartment {
+        a {
+          @extend .button;
+          @extend .button--rounded;
+          @extend .button--accent-clear;
+        }
+      }
+    }
+     > li > a {
+      padding-left: rem(15px);
+      padding-right: rem(15px);
+
+      
+    }
+
+    &.secondry {
+      > li > a { 
+        font-size: 0.9375rem;
+      }
+    }
+
+     > li.last {
+      margin-left: rem(15px);
+    }
+  }
+
+  li {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: block;
+    list-style: none;
+    position: relative;
+  }
+
+  .nolink {
+    cursor: pointer;
+  }
+
+  &:first-child {
+    .nolink,
+    a:not(.button) {
+      font-size: rem(17px);
+    }
+  }
+
+  .nolink,
+  a:not(.button) {
+    color: $color-medium-grey;
+    display: block;
+    font-size: rem(15px);
+    line-height: 1;
+    padding: rem(10px 30px);
+
+    &:hover, &:focus {
+      @media #{$medium-up} {
+        &:hover,
+        &:focus {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+
+ 
+}
+
+}

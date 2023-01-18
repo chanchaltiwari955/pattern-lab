@@ -1,0 +1,14 @@
+<div class="footer__menu">
+  <h4 class="block-title">{{footerheading}}</h4>
+  <ul class="menu">
+    {% for key,value in footermenutop.footerTop %}
+      <li {{ value.attributes }}>
+        {% include '@atoms/links/links.twig' with {
+          text: value.text,
+          class: value.class,
+          url: value.url
+        } %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

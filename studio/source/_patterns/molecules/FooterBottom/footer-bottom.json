@@ -1,0 +1,23 @@
+{ 
+  "footermenubottom": {
+    "footerBottom": [
+      {
+        "url": "#",
+        "text": "About Us",
+        "class": "nav-link"
+      },
+      {
+        "url": "#",
+        "text": "Contact Us",
+        "class": "nav-link"
+      },
+      {
+        "url": "#",
+        "text": "FAQs",
+        "class": "nav-link"
+      }
+    ]
+  },
+  "footer_logo": "../../../images/footer-logo.png",
+  "footer_copy": "© Domu, LLC 2022      Domu, LLC is an independently owned affiliate of Schatz Realty, LLC."
+}

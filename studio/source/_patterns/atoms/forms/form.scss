@@ -1,0 +1,118 @@
+@import '../../_patterns-global/scss/abstracts/variables';
+@import '../../_patterns-global/scss/abstracts/mixins';
+
+
+  label {
+    font-size: 16px;
+    font-family: $GT-Walsheim;
+    width: 200px;
+    margin-bottom: 10px;
+    vertical-align: top;
+  }
+  input, select, input[type=serach], input[type=textarea], textarea{
+    font-size:   0.875rem;
+    font-family:  $GT-Walsheim;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ddd;
+    height: 3rem;
+    	@media #{$small-up} { 
+  font-size:   1rem;
+      }
+  
+  }
+  textarea {
+    height: 6rem;
+    padding: 10px;
+  }
+
+
+
+.options {
+  label {
+    input {
+      margin-right: 10px;
+    }
+  }
+  ul {
+    padding-left: $spacing-02;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+// checkbox and radio
+.form-type-radios {
+  .form-type-radio:last-child {
+    margin-bottom: 0;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+
+  + label {
+    cursor: pointer;
+    font-weight: $normal;
+    line-height: 1.2;
+    padding: 0 0 0 28px;
+    position: relative;
+    margin-bottom: 0; // Override generic label style
+  }
+
+  + label:before {
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    vertical-align: middle;
+  }
+
+  &:focus + label {
+    outline: 1px dashed $color-accent;
+    outline-offset: 5px;
+  }
+
+  &:disabled + label:before {
+    color: $color-accent3;
+  }
+
+  &:checked:disabled + label:before {
+    color: $color-accent3;
+  }
+}
+
+
+input[type="checkbox"] {
+  + label:before {
+    background: url("../../images/forms/icon-checkbox-unchecked.png") 0 0 no-repeat;
+    background-size: 19px;
+    height: 20px;
+    top: 0;
+    width: 20px;
+  }
+
+  &:checked + label:before {
+    background-image: url("../../images/forms/icon-checkbox-checked.png");
+  }
+}
+
+input[type="radio"] {
+  + label:before {
+    background: url("../../images/forms/icon-radio-unchecked.png") 0 0 no-repeat;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    top: -2px;
+  }
+
+  &:checked + label:before {
+    background-image: url("../../images/forms/icon-radio-checked.png");
+  }
+}

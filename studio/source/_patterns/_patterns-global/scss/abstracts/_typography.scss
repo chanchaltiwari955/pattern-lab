@@ -1,0 +1,314 @@
+/**
+  * Typograpgy
+**/
+@import './variables';
+@import './breakpoints';
+@import './mixins';
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $color-medium-grey;
+  font-family: $GT-Walsheim;
+  font-size: rem($base-font-size-sm);
+  line-height: $base-line-height-sm;
+  font-weight: $normal;
+  font-style: normal;
+
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include devicebreak(medium) {
+    font-size: rem($base-font-size-lg);
+  }
+}
+
+a {
+  color: $color-accent;
+  transition: color 200ms ease-out 0s;
+   &:hover {
+    text-decoration: none;
+    color: $color-accent;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  margin: 0;
+  padding: 0;
+
+  @include devicebreak(medium) {
+    margin-bottom: $font-size-16;
+  }
+}
+
+%headings,
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  color: $color-medium-grey;
+  font-family: $GT-Walsheim;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  text-transform: none;
+
+  a {
+    color: inherit;
+  }
+}
+
+%h1, %h2, %h3, %h4, %h5, %h6 {
+  @extend %headings;
+}
+
+h1,
+.h1,
+%h1 {
+  @media #{$small-up} {
+    font-size: rem(60px);
+  }
+  color: $color-dark-grey;
+  font-size: rem(40px);
+  font-weight: $normal;
+  letter-spacing: rem(-0.8px);
+  line-height: 1;
+}
+
+h2,
+.h2,
+%h2 {
+  @media #{$small-up} {
+    font-size: rem(52px);
+    letter-spacing: rem(-1px);
+  }
+  font-size: rem(40px);
+  font-weight: $normal;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+// For component headings
+.h2-alt1,
+%h2-alt1 {
+  margin-bottom: rem(80px);
+  text-align: center;
+  width: 100%;
+  
+  &:after {
+    background: $color-accent;
+    content: '';
+    display: block;
+    width: rem(80px);
+    margin: 0 auto;
+    height: 1px;
+    position: relative;
+    top: rem(30px);
+  }
+}
+
+h3,
+.h3,
+%h3 {
+  @media #{$small-up} {
+    font-size: rem(48px);
+    letter-spacing: rem(-0.75px);
+    line-height: get-line-height(50px, 48px);
+  }
+  font-size: rem(36px);
+  font-weight: $normal;
+  letter-spacing: rem(-0.5px);
+  line-height: get-line-height(38px, 36px);
+}
+
+h4,
+.h4,
+%h4 {
+  font-size: rem(24px);
+  font-weight: $semibold;
+  letter-spacing: rem(-0.25px);
+  line-height: get-line-height(28px, 24px);
+}
+
+h5,
+.h5,
+%h5 {
+  @media #{$small-up} {
+    font-size: rem(32px);
+    letter-spacing: rem(-0.8px);
+    line-height: 1;
+  }
+  font-size: rem(20px);
+  font-weight: $normal;
+  letter-spacing: rem(-0.5px);
+  line-height: (28/24);
+}
+
+h6,
+.h6,
+%h6 {
+  @media #{$small-up} {
+    font-size: rem(26px);
+    letter-spacing: rem(-0.8px);
+    line-height: 1;
+  }
+  font-size: rem(16px);
+  font-weight: $normal;
+  letter-spacing: rem(-0.5px);
+  line-height: (28/24);
+}
+
+p {
+  margin: 0 0 $std-bottom-margin;
+}
+
+strong, b {
+  font-weight: $bold;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  border-left: 5px solid rgba($color-accent, 0.5);
+  margin-left: 2em;
+  padding-left: 1em;
+}
+
+// list start
+ol, ul {
+  margin: 0 0 $std-bottom-margin;
+  padding: 0 0 0 rem(20px);
+
+  ol, ul {
+    margin-top: $list-item-padding;
+    margin-bottom: 0;
+  }
+
+  li {
+    line-height: 1.6;
+    margin: 0 0 $list-item-padding;
+    padding: 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ol li {
+  list-style: decimal;
+}
+
+ul li {
+  list-style: square;
+}
+
+nav {
+  ul, ol {
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+ul.toolbar-menu {
+  font-size: rem(14px);
+  line-height: 1;
+
+  li {
+    margin-bottom: 0;
+  }
+}
+// list end
+
+
+// table start
+table {
+  margin: 0 0 $std-bottom-margin;
+  width: 100%;
+}
+
+caption {
+  font-weight: $bold;
+}
+
+td, th {
+  padding: rem(10px);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+td.active {
+  background: none;
+}
+
+th {
+  font-weight: $bold;
+  padding-bottom: 0;
+}
+
+tr.even,
+tr.odd {
+  background: none;
+  border-bottom: none;
+  padding: 0;
+}
+// table end
+
+//image start
+img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+
+figure {
+  display: table;
+}
+figcaption {
+  caption-side: bottom;
+  display: table-caption;
+}
+//image end
+
+hr {
+  border: 1px solid $color-black;
+}
+
+iframe {
+  border: 0;
+  height: rem(650px);
+  width: 100%;
+}
+/* typograpgy end */
+
+
+.section-title {
+  @extend %h2-alt1;
+}

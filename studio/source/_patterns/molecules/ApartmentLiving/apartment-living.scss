@@ -1,0 +1,99 @@
+
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+
+// At a glance
+//------------------------------------------------------------------------------
+
+$hood-section-padding-large: 100px;
+$hood-section-padding-small: 60px;
+
+
+.hood__section {
+  @media #{$small-up} {
+    padding: rem($hood-section-padding-large 0);  
+  }
+  padding: rem($hood-section-padding-small 0);
+}
+.hood__glance {
+  background-color: $color-beige;
+  position: relative;
+
+  .addthis {
+    @media #{$small-down} {
+      display: none;
+    }
+    position: absolute;
+    right: $large-container-padding;
+  }
+}
+
+.hood__glance-content {
+  position: relative;
+}
+
+.hood__glance-inner-container {
+  @media #{$small-up} {
+    padding-top: rem(50px);
+  }
+  margin: 0 auto;
+  max-width: rem(1100px);
+}
+
+.hood__glance-inner {
+  @include flex-container();
+}
+// End at a glance
+//------------------------------------------------------------------------------
+
+
+// Highlights
+//------------------------------------------------------------------------------
+.hood__highlights {
+  @include flex-element();
+  @media #{$small-up} {
+    flex: 0 0 66%;
+    max-width: 66%;    
+  }
+
+  .field-name-field-highlights {
+    @include flex-container();
+
+    > .paragraphs-item-highlight {
+      @include flex-element();
+      @include flex-element-100();
+      @media #{$xsmall-up} {
+        @include flex-element-50();  
+      }
+    }
+  }
+
+  h3 {
+    @extend %h6;
+    font-weight: 700;
+  }
+  
+  h3,
+  .field-name-field-long-description {
+    letter-spacing: rem(-0.3px);
+    font-size: 1rem;
+  }
+}
+
+.highlight__image {
+  @media #{$xsmall-down} {
+    justify-content: center;
+  }
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: rem(16px);
+  height: rem(115px);
+
+  img {
+    max-height: 100%;
+    width: 136px;
+  }
+}
+// End highlights
+//------------------------------------------------------------------------------

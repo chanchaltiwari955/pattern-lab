@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="pl" lang="en">
+  <head>
+    <title>We Create</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/style.css?1674019043271" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1674019043271" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="body"><section id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 col-lg-4">
+        <img src="https://www.shutterstock.com/image-photo/professional-team-programmer-working-on-260nw-1660725319.jpg"
+          alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page"
+          class="w-100 img-thumbnail mb-3">
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h6 class="hero-content__container section-subtitle mb-0">
+        
+<h6  >
+      We Create
+  </h6>
+</h6>
+        <h6 class="section-title mb-3">
+        
+<h6  >
+      Awesome Work
+  </h6>
+</h6>
+        <p>
+        
+<div >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente cupiditate quas amet harum perferendis minus, cum dolorum obcaecati iste aspernatur voluptatum aut. Cum laudantium unde nemo doloribus eligendi quodarum ea vitae dicta. Accusantium vero, ea? Alias, atque libero. Id, ut harum. consectetur adipisicing elit. Omnis quidem quos iure a dolorum illum culpa quia nemo soluta ratione harum beatae minus doloribus consectetur! Similique tempora sunt doloribus molestias.
+  </div>
+
+</p>
+      </div>
+    </div>
+  </div>
+</section><!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-headings","lineagePath":"../../patterns/atoms-text-headings/atoms-text-headings.rendered.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"../../patterns/atoms-text-paragraph/atoms-text-paragraph.rendered.html"}],"lineage":[{"lineagePattern":"atoms-headings","lineagePath":"../../patterns/atoms-text-headings/atoms-text-headings.rendered.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"../../patterns/atoms-text-paragraph/atoms-text-paragraph.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"Test"},"patternExtension":"twig","patternName":"Test","patternPartial":"molecules-test","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  window.patternData = {"cssEnabled":false,"patternLineageExists":true,"patternLineages":[{"lineagePattern":"atoms-headings","lineagePath":"../../patterns/atoms-text-headings/atoms-text-headings.rendered.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"../../patterns/atoms-text-paragraph/atoms-text-paragraph.rendered.html"}],"lineage":[{"lineagePattern":"atoms-headings","lineagePath":"../../patterns/atoms-text-headings/atoms-text-headings.rendered.html"},{"lineagePattern":"atoms-paragraph","lineagePath":"../../patterns/atoms-text-paragraph/atoms-text-paragraph.rendered.html"}],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":true,"patternDesc":"","patternBreadcrumb":{"patternGroup":"molecules","patternSubgroup":"Test"},"patternExtension":"twig","patternName":"Test","patternPartial":"molecules-test","patternState":"","patternEngineName":"twig-php","extraOutput":{}};
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1674019043271">
+  (function() {
+    if (self != top) {
+      var cb = '1674019043271';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+
+<script type="module">
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  import('../../styleguide/js/patternlab-pattern.modern.js');
+</script>
+
+<script id="pl-js-insert-1674019043271" nomodule>
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on https://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  // always load Pattern-specific JS so UI like accordions, etc can continue to work even when viewed as a standalone HTML page
+  loadJS('../../styleguide/js/patternlab-pattern.js');
+</script>
+
+  
+  </body>
+</html>

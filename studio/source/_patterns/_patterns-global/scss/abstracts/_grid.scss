@@ -1,0 +1,170 @@
+/** @file _grid.scss
+  * Grid
+  * -----------------------------------------------------------------------------
+  *
+  * A SASS file containing global grid settings.
+  *
+**/
+
+%row,
+.row {
+  @media #{$small-up} {
+    padding: rem(0 $large-container-padding);
+  }
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: rem($content-maxwidth);
+  padding: rem(0 $small-container-padding);
+
+  &.row--1100 {
+    max-width: rem(1100px);
+  }
+
+  &.row--1058 {
+    max-width: rem(1058px);
+  }
+}
+
+
+// Containers for arbitrary max widths.
+%container--640-left,
+.container--640-left {
+  max-width: rem(640px);
+}
+
+%container--644-left,
+.container--644-left {
+  max-width: rem(644px);
+}
+
+%container--756,
+.container--756 {
+  margin: 0 auto;
+  max-width: rem(756px);
+}
+
+%container--866,
+.container--866 {
+  margin: 0 auto;
+  max-width: rem(866px);
+}
+
+%container--980,
+.container--980 {
+  margin: 0 auto;
+  max-width: rem(980px);
+}
+
+%container--1080,
+.container--1080 {
+  margin: 0 auto;
+  max-width: rem(1080);
+}
+
+
+// Flexbox grids
+//-----------------------------------------------------------------------------
+// Example usage for a 50/50 grid:
+//
+// HTML:
+// <div class="the-container">
+//   <div class="an-element">Lorem</div>
+//   <div class="an-element">Lorem</div>
+// </div>
+//
+// SCSS:
+// .the-container { @include flex-container() }
+// .an-element {
+//    @include flex-element();
+//    @include flex-element-50();
+// }
+
+$flex-gutter-default: 20px;
+$flex-row-margin-default: 40px;
+$breakpoint: $small-up;
+
+@mixin flex-container($flex-gutter: $flex-gutter-default) {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: rem(-1 * $flex-gutter);
+  margin-right: rem(-1 * $flex-gutter);
+}
+
+@mixin flex-element($flex-gutter: $flex-gutter-default) {
+  box-sizing: border-box;
+  padding: 0 rem($flex-gutter);
+}
+
+@mixin flex-element-16($flex-row-margin: $flex-row-margin-default) { // Apply to the flex elements
+  flex: 0 0 percentage(1/6);
+  max-width: percentage(1/6); // This is for IE11, because it does not respect the border-box model on flex elements
+
+  &:nth-child(n) { // Reset margins from any previous media queries
+    margin-top: 0;
+  }
+
+  // Only apply top margins to the 4th element and on.    
+  &:nth-child(n+7) {
+    margin-top: rem($flex-row-margin);    
+  }
+}
+
+@mixin flex-element-25($flex-row-margin: $flex-row-margin-default) { // Apply to the flex elements
+  flex: 0 0 percentage(1/4);
+  max-width: percentage(1/4); // This is for IE11, because it does not respect the border-box model on flex elements
+
+  &:nth-child(n) { // Reset margins from any previous media queries
+    margin-top: 0;
+  }
+
+  // Only apply top margins to the 4th element and on.    
+  &:nth-child(n+5) {
+    margin-top: rem($flex-row-margin);    
+  }
+}
+
+@mixin flex-element-33($flex-row-margin: $flex-row-margin-default) { // Apply to the flex elements
+  flex: 0 0 percentage(1/3);
+  max-width: percentage(1/3); // This is for IE11, because it does not respect the border-box model on flex elements
+
+  &:nth-child(n) { // Reset margins from any previous media queries
+    margin-top: 0;
+  }
+
+  // Only apply top margins to the 4th element and on.    
+  &:nth-child(n+4) {
+    margin-top: rem($flex-row-margin);    
+  }
+}
+
+@mixin flex-element-50($flex-row-margin: $flex-row-margin-default) { // Apply to the flex elements
+  flex: 0 0 percentage(1/2);
+  max-width: percentage(1/2); // This is for IE11, because it does not respect the border-box model on flex elements
+
+  &:nth-child(n) { // Reset margins from any previous media queries
+    margin-top: 0;
+  }
+
+  // Only apply top margins to the 3rd element and on.
+  &:nth-child(n+3) {
+    margin-top: rem($flex-row-margin);    
+  }
+}
+
+@mixin flex-element-100($flex-row-margin: $flex-row-margin-default) { // Apply to the flex elements
+  flex: 0 0 100%;
+  max-width: 100%; // This is for IE11, because it does not respect the border-box model on flex elements
+
+  &:nth-child(n) { // Reset margins from any previous media queries
+    margin-top: 0;
+  }
+
+  // Only apply top margins to the 2nd element and on.
+  &:nth-child(n+2) {
+    margin-top: rem($flex-row-margin);    
+  }
+}
+// End flexbox grids
+//-----------------------------------------------------------------------------

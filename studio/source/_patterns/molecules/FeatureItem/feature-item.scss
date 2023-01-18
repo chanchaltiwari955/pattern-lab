@@ -1,0 +1,62 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+ .feature-item {
+    @media #{$xsmall-up} {
+      width: rem(340px);
+    }
+    @media #{$small-up} {
+      width: rem(515px);
+      margin-right: rem(30px);
+      min-height: rem(445px);
+      padding-right: rem(30px);
+    }
+    border-right: 1px solid $color-border-alt;
+    display: flex;
+    margin-right: rem(20px);
+    padding-right: rem(20px);
+    padding-top: rem(20px);
+    width: rem(280px);
+
+    a {
+      display: block;
+    }
+
+    h3 {
+      @extend %h1;
+      @media #{$small-up} {
+        font-size: rem(48px);
+      }
+      @media #{$small-down} {
+        font-size: rem(28px);
+      }
+      @media #{$xsmall-down} {
+        font-size: rem(20px);
+      }
+
+      a {
+        &:hover {
+          color:$color-green;
+        }
+      }
+    }
+  }
+
+  .feature-item__text {
+    @media #{$small-up} {
+      padding-right: rem(30px);
+    }
+    flex-grow: 1;
+    padding-right: rem(20px);
+  }
+
+  .feature-item__image {
+    @media #{$xsmall-up} {
+      width: rem(155px);
+    }
+    @media #{$small-up} {
+      width: rem(210px);
+    }
+    width: rem(110px);
+    flex-shrink: 0;
+  }

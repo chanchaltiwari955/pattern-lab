@@ -1,0 +1,180 @@
+@import "../../scss/abstracts/variables";
+@import "../../scss/abstracts/mixins";
+
+.layout-main-wrapper {
+  margin-top: 60px;
+}
+
+.page-wrapper {
+  background-color: $color-white;
+}
+
+section.block {
+  margin-bottom: 0;
+}
+
+#user-login,
+#user-pass,
+#user-register-form {
+  padding-bottom: 3.75rem;
+  .layout-main-wrapper {
+    max-width: 31.25rem;
+    margin: 0 auto;
+    .nav {
+      display: none;
+    }
+    .page-title {
+      color: $color-accent;
+      margin: 3.75rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.03125rem;
+      @media #{$small-up} {
+        margin: 3.75rem 0;
+      }
+    }
+
+    form {
+      &.user-login-form {
+        padding-bottom: 3.75rem;
+      }
+      .field--widget-options-buttons {
+        padding-bottom: 3.125rem;
+        margin-bottom: 1.875rem;
+        border-bottom: 1px solid $color-border-alt;
+      }
+      .form-item {
+        margin-bottom: 0.75rem;
+        .fieldset-legend {
+          display: none;
+        }
+
+        .js-form-type-radio {
+          label {
+            display: block;
+          }
+        }
+      }
+      label {
+        width: 100%;
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+        .formtip {
+          display: none;
+        }
+      }
+      .form-actions {
+        margin: 2em 0 0;
+      }
+      .more-links {
+        margin-top: 1.25rem;
+        .register-button.button {
+          border: 0 !important;
+          padding: 2px 0;
+          color: $color-accent;
+          font-weight: inherit;
+          font-size: 1rem;
+        }
+      }
+
+      input,
+      select {
+        height: auto;
+        width: 100%;
+        padding: 0.9375rem 0.5rem;
+        margin-bottom: 0;
+      }
+      .button {
+        @extend .button;
+        width: 11.5625rem;
+        border-radius: 6.25rem;
+        padding: 1rem 1.25rem;
+        background-color: $color-white;
+        border: 1px solid $color-medium-grey !important;
+        color: $color-medium-grey;
+        margin: 0 auto;
+        display: block;
+        box-shadow: none;
+      }
+      .formtips-processed {
+        color: inherit;
+        opacity: 1;
+        display: block;
+        padding: 0;
+        position: relative;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+        margin-top: 0.5em;
+        font-size: 0.85em;
+        &::before {
+          display: none;
+        }
+      }
+      a {
+        text-align: center;
+        display: block;
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+#user-register-form {
+  form {
+    label {
+      display: none;
+    }
+    input[type="checkbox"] + label, input[type="radio"] + label {
+      display: block;
+    }
+  }
+}
+
+//content-util tabs all pages
+.content-util {
+  margin-bottom: 1.875rem;
+  margin-top: 1.875rem;
+  padding: 0 1.25rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 81.875rem;
+  padding: 0 1.25rem;
+
+  .nav-tabs.primary {
+    border: none;
+    display: flex;
+    margin: 1.875rem 0;
+    padding: 0;
+    .nav-item {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      a {
+        background: #f5f5f5;
+        border: none;
+        border-bottom: 2px solid $color-accent;
+        color: $color-medium-grey;
+        display: block;
+        font-weight: 400;
+        margin: 0;
+        padding: 0.375rem 0.75rem 0.25rem;
+
+        &.active {
+          background: $color-accent;
+          border-radius: 0;
+          border-bottom: 2px solid $color-accent;
+          color: $color-white;
+          font-weight: 700;
+        }
+        &:hover {
+          background-color: $color-green;
+          color: $color-white;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

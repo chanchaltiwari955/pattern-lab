@@ -1,0 +1,51 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+// Rents table
+//------------------------------------------------------------------------------
+.hood__rents {
+    @include flex-element();
+    @media #{$small-up} {
+      flex: 0 0 34%;
+      margin-top: 0;
+      max-width: 34%;
+    }
+    width: 100%;
+    margin-top: rem(100px);
+  
+    table {
+      border-collapse: separate;
+      border-spacing: rem(0 10px);
+    }
+  
+    span {
+      font-weight: $bold;
+    }
+  
+    h3 {
+      text-align: center;
+    }
+  
+    td {
+      border: 1px solid $color-xlight-grey;
+      line-height: 1.2;
+      padding: rem(24px 20px);
+    }
+  
+    td:first-child {
+      border-right: none;
+      padding-right: rem(10px);
+    }
+  
+    td:nth-child(2) {
+      border-left: none;
+      color: $color-accent;
+      font-size: rem(26px);
+      padding-left: rem(10px);
+      width: rem(165px);
+    }
+  }
+
+  // End rents table
+  //------------------------------------------------------------------------------
+  

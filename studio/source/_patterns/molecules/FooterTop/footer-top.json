@@ -1,0 +1,22 @@
+{ 
+  "footerheading": "About Domu",
+  "footermenutop": {
+    "footerTop": [
+      {
+        "url": "#",
+        "text": "About Us",
+        "class": "nav-link"
+      },
+      {
+        "url": "#",
+        "text": "Contact Us",
+        "class": "nav-link"
+      },
+      {
+        "url": "#",
+        "text": "FAQs",
+        "class": "nav-link"
+      }
+    ]
+  }
+}

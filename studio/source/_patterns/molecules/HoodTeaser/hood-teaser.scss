@@ -1,0 +1,79 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+.hood-teaser {
+  position: relative;
+  width: 20.125rem;
+
+  .hood-teaser__image {
+    position: relative;
+    z-index: 10;
+
+    &:before {
+      background-color: $color-black;
+      content: '';
+      display: block;
+      height: 100%;
+      opacity: 0.3;
+      pointer-events: none;
+      position: absolute;
+      transition: opacity 200ms ease-in;
+      width: 100%;
+      z-index: 20;
+    }
+
+    a {
+      display: block;
+      line-height: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .hood-teaser__description {
+      max-height: rem(500px);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.hood-teaser__text {
+  left: 0;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  padding: rem(20px);
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 20;
+}
+
+.hood-teaser__title {
+  @extend %h3;
+  color: $color-white;
+  font-weight: $semibold;
+  font-size: rem(28px);
+  @media #{$small-up} {
+   font-size: rem(32px);
+  }
+}
+
+.hood-teaser__description {
+  color: $color-white;
+  line-height: 1.2;
+  overflow: hidden;
+  transition: max-height 400ms ease 0s;
+  max-height: 0;
+
+  a {
+    color: $color-white;
+  }
+  p, ul {
+    margin: 0;
+  }
+}

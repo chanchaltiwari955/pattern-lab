@@ -1,0 +1,76 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+// Rents table
+//------------------------------------------------------------------------------
+.hero-content__container {
+	max-width: 40.9375rem;
+	box-sizing: content-box;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0 1.25rem;
+
+	h1 {
+		white-space: pre-line;
+
+		@media #{$small-up} {
+			margin-top: -6.25rem;
+		}
+	}
+
+	.hero-content__search {
+		.search-form {
+			margin: 0 auto;
+			max-width: 35rem;
+
+			.form-wrapper {
+				position: relative;
+
+				.domu-search__icon {
+					@extend .domu-icon-magnifying-glass;
+					cursor: pointer;
+					font-size: rem(18px);
+					left: 20px;
+					line-height: 0;
+					position: absolute;
+					transform: translateY(-50%);
+					z-index: 1;
+					display: none;
+
+					@media #{$xsmall-up} {
+						display: block;
+						top: 50%;
+
+						&:before {
+							content: $domu-icon-magnifying-glass;
+							font-family: $font-icons;
+						}
+					}
+				}
+
+				input[type="text"] {
+					height: auto;
+					width: 100%;
+					padding: 1.375rem;
+					text-overflow: ellipsis;
+					line-height: 1;
+
+					@media #{$xsmall-up} {
+						padding-left: 3.25rem;
+						padding-right: 4.375rem;
+					}
+
+					@media #{$small-up} {
+						font-size: 1.125rem;
+					}
+				}
+			}
+
+			.button {
+				display: block;
+				margin: 2.5rem auto 0 auto;
+				min-width: 11.5625rem;
+			}
+		}
+	}
+}

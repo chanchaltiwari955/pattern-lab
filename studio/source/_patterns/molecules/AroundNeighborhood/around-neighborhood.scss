@@ -1,0 +1,181 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+
+// Around the neighborhood (aka Galleries)
+//------------------------------------------------------------------------------
+.hood__around {
+    background-color: $color-beige;
+  }
+  
+  .hood-gallery {
+    h3 {
+      @extend %body-1;
+      border-bottom: 1px solid $color-xlight-grey;
+      font-weight: $normal;
+      margin-bottom: rem(20px);
+      padding-bottom: rem(20px);
+      text-align: center;
+    }
+  
+    .field-name-field-long-description {
+      @extend %body-1;
+    }
+  
+    .field-name-field-gallery-images {
+      > .field-items {
+        @include flex-container(10px);
+        
+        > .field-item {
+          @include flex-element(10px);
+          @include flex-element-100(20px);
+          @media #{$xsmall-up} {
+            @include flex-element-50(20px);  
+  
+            &:first-child {
+              flex-basis: 100%;
+              max-width: 100%;
+            }
+  
+            &:nth-child(n+2) {
+              margin-top: rem(20px);
+            }          
+          }
+        }  
+      }
+    }
+  
+    // If a video is present at the top, don't make the first image big.
+  
+    .hood-gallery__videos + .field-name-field-gallery-images {
+      > .field-items {
+        @include flex-container(10px);
+        
+        > .field-item {
+          @include flex-element(10px);
+          @include flex-element-100(20px);
+          @media #{$xsmall-up} {
+            @include flex-element-50(20px);      
+          }
+        }  
+      }
+    }
+  
+  }
+  
+  .field-name-field-galleries {
+    > .field-items {
+      > .field-item + .field-item {
+        @media #{$small-up} {
+          margin-top: rem(150px);
+        }
+        margin-top: rem(75px);
+      }
+    }
+  }
+  
+  .hood-gallery__videos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-10px);
+  
+    .hood-gallery__video-container {
+      @media #{$xsmall-up} {
+        flex: 1 0 50%;  
+      }
+      flex: 1 0 100%;
+    }
+  
+    .embedded-video {
+      padding: rem(0 10px 20px 10px);
+    }
+  }
+  // End around the neighborhood
+  //------------------------------------------------------------------------------
+
+  // Anchors
+//------------------------------------------------------------------------------
+    a {
+        color: $color-accent;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-decoration: none;
+        transition: color 200ms ease-out 0s;
+    
+        &:hover,
+        &:focus {
+        color: $color-green;
+        }
+    }
+    
+    %link-base,
+    .link-base {
+        color: #4A4A4A;;
+    
+        &:hover,
+        &:focus {
+        color: $color-accent;
+        }
+    }
+    
+    %link-light,
+    .link-light {
+        color: $color-light;
+    
+        &:hover,
+        &:focus {
+        color: darken($color-light, 10%);
+        }
+    }
+    
+    %link-dark,
+    .link-dark {
+        color: $color-dark;
+    
+        &:hover,
+        &:focus {
+        color: lighten($color-dark, 10%);
+        }
+    }
+    
+    %link-xdark,
+    .link-xdark {
+        color: $color-xdark-grey;
+    
+        &:hover,
+        &:focus {
+        color: $color-accent;
+        }
+    }
+    
+    %link-grey,
+    .link-grey {
+        color: $color-xlight-grey;
+    
+        &:hover,
+        &:focus {
+        color: $color-accent;
+        }
+    }
+    
+    %link-green,
+    .link-green {
+        color: $color-green;
+    
+        &:hover,
+        &:focus {
+        color: $color-accent;
+        }
+    }
+    
+    .readless-link,
+    .readmore-link {
+        display: block;
+        @extend %link-green;
+        margin-bottom: $std-bottom-margin;
+    }
+  // End anchors
+  //------------------------------------------------------------------------------
+  

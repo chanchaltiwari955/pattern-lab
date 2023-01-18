@@ -1,0 +1,22 @@
+<div class="feature-item">
+   <div class="feature-item__text">
+      <h3>
+          {% include '@atoms/links/links.twig' with {
+            text: title,
+            url: url
+         } %}
+      </h3>
+      <div class="feature-item__description">
+         {% include '@atoms/text/paragraph.twig' with {
+            paragraph_content: description
+         } %}
+      </div>
+   </div>
+   <div class="feature-item__image">
+      <a href="#">
+         {% include '@atoms/images/image.twig' with {
+            src: hood_teaser_img
+         } %}
+      </a>
+   </div>
+</div>

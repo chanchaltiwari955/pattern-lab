@@ -1,0 +1,42 @@
+<div class="domu-search-listing">
+   <div class="listing-inner">
+      <div class="listing-fave">
+         <a href="#" class="domu-fav-icon">
+            <span class="domu-icon-heart"></span>
+         </a>
+      </div>
+      <a href="#" title="" class="listing-image " style={{itemimg}}></a>
+      <div class="listing-details">
+         <h3 class="listing-price">
+            {% include '@atoms/09-links/00-links.twig' with {
+               text: price,
+               url: url
+            } %}
+         </h3>
+         <a href="#" class="listing-title">
+              {% include '@atoms/02-text/01-paragraph.twig' with {
+               paragraph_content: title
+            } %}
+         </a>
+         <div class="listing-address">
+            {% include '@atoms/02-text/01-paragraph.twig' with {
+               paragraph_content: address
+            } %}
+         </div>
+         <div class="listing-amenities">
+            <div class="item-list">
+               <ul class="glance">
+                    {% for key,value in amenitieslisting.amenities %}
+                     <li {{ value.attributes }}>
+                     {% include '@atoms/02-text/01-paragraph.twig' with {
+                        paragraph_content: value.text,
+                        class: value.class
+                     } %}
+                     </li>
+                  {% endfor %}
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

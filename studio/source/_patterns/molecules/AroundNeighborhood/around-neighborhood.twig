@@ -1,0 +1,48 @@
+<div class="field-item even">
+    <div class="entity entity-paragraphs-item paragraphs-item-gallery hood-gallery">
+            <div class="field field-name-field-title field-type-text field-label-hidden">
+              {% include '@atoms/text/headings.twig' with {
+              heading_level: 3,
+              heading: title,
+           } %}
+          </div>
+        <div class="field field-name-field-long-description field-type-text-long field-label-hidden">
+            <div class="readmore-summary">
+                <p>{% include '@atoms/text/paragraph.twig' with {
+                   paragraph_content: description
+                   } %}                
+                   </p>
+            </div>
+            <div class="readmore-text" style="display:none;">
+                  {% include '@atoms/text/paragraph.twig' with {
+                   paragraph_content: hidedescription
+                   } %}  
+                <h3 class="rtecenter">
+                  {% include '@atoms/text/headings.twig' with {
+                  heading_level: 3,
+                  heading: subtitle,
+                  } %}
+                </h3>
+                {% for key,value in links %}
+                  {% include '@atoms/links/links.twig' with {
+                    url: value.url,
+                    text: value.text
+                  } %}
+                {% endfor %}
+            </div>
+            <a href="/chicago/neighborhoods/streeterville" class="readmore-link active">Read more</a>
+        </div>
+
+        <div class="field field-name-field-gallery-images field-type-image field-label-hidden">
+            <div class="field-items">
+            {% for key, value in galleryimg %}
+                <div class="field-item even">
+                    {% include '@atoms/images/image.twig' with {
+                      src: value.gallery_img
+                    } %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

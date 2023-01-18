@@ -1,0 +1,97 @@
+@import "../../_patterns-global/scss/abstracts/variables";
+@import "../../_patterns-global/scss/abstracts/mixins";
+
+.domu-search-listing {
+    flex: 0 0 33%;
+    width: 33%;
+    padding: 0 10px;
+    margin-top: 16px !important;
+    max-width: 33.33333%;
+  }
+
+.domu-search-listing {
+  .glance {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      background: $color-bg-grey;
+      display:inline-block;
+      font-size: rem(12px);
+      list-style: none;
+      margin: rem(0 6px 6px 0);
+      padding: rem(3px 8px);
+    }
+  }
+}
+
+.listing-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.listing-fave {
+  a {
+    background-color: rgba($color-xdark-grey, 0.9);
+    color: $color-white;
+    padding: rem(0 11px);
+    position: absolute;
+    right: rem(10px);
+    top: rem(10px);
+    z-index: 10;
+
+    span {
+      font-weight: $bold;
+      line-height: rem(35px);
+    }
+  }
+}
+
+.listing-image {
+  background: $color-almost-white no-repeat center center;
+  background-size: cover;
+  display: block;
+  height: 0;
+  padding-bottom: 64.7059%; // 1.54 ratio
+}
+
+.listing-price {
+  color: $color-green;
+  margin: rem(5px 0); 
+  font-size: 1.75rem;
+  letter-spacing: -0.03125rem;
+  @media #{$xsmall-up} {
+    font-size: 2rem;
+  }
+  
+  a {
+    color: $color-green;
+    &:hover,
+    &:focus {
+      color: $color-green;
+    }
+  }
+}
+
+.listing-title {
+  @extend %h5;
+  display: block;
+  margin-bottom: rem(5px);
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: -0.01562rem;
+  line-height: 1;
+
+  &:hover {
+    color: $color-green;
+  }
+}
+
+.listing-address {
+  @extend %tiny-heading;
+  color: $color-xlight-grey;
+  margin-bottom: rem(8px);
+}

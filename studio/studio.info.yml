@@ -1,0 +1,41 @@
+name: 'Creative Studio'
+type: theme
+description: 'Creative Studio subtheme based on Bootstrap 5 theme.'
+core_version_requirement: '^9.4 || ^10'
+'base theme': bootstrap5
+libraries:
+  - studio/global-styling
+ckeditor_stylesheets:
+  - css/style.css
+ckeditor5-stylesheets:
+  - css/ck5style.css
+stylesheets-remove:
+  - '@bootstrap5/css/style.css'
+
+component-libraries:
+  atoms:
+    paths:
+      - pattern-lab/source/_patterns/atoms
+  molecules:
+    paths:
+      - pattern-lab/source/_patterns/molecules
+  organisms:
+    paths:
+      - pattern-lab/source/_patterns/organisms
+  templates:
+    paths:
+      - pattern-lab/source/_patterns/templates
+  pages:
+    paths:
+      - pattern-lab/source/_patterns/pages
+
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
